@@ -1,4 +1,4 @@
-# ALL SCRIPT
+# ALL SCRIPT(script can give a best life avoiding wasting time by computer)
 ## android
 ### label_package : list packages and name for delete app in android
 
