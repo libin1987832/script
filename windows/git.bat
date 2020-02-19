@@ -1,20 +1,23 @@
 set git="D:\Program Files\Git\bin\git" 
-H:
-
 set dir=%~dp0
 set newlog=%dir%git.log
-cd git
+F:
+cd code_bak\git
 for /f "tokens=1,2 delims= " %%i in (%dir%git.txt) do (
-echo cd %%i
+echo enter %%i project >> %newlog%
 cd %%i
-%git% pull >> %newlog%
-echo add *.%%j >> %newlog%
+%git% pull
+echo  *.%%j type to stage >> %newlog%
 %git% add *.%%j >> %newlog%
-echo commit -m %date:~0,4%年%date:~5,2%月%date:~8,2%日 >> %newlog%
+echo commit message %date:~0,4%年%date:~5,2%月%date:~8,2%日 >> %newlog%
+echo commit reply message >>%newlog%
 %git% commit -m %date:~0,4%年%date:~5,2%月%date:~8,2%日 >> %newlog%
-echo push >> %newlog%
+echo push github.com >> %newlog%
+echo github reply message >>%newlog%
 %git% push >> %newlog%
+echo =next project >>%newlog%
 cd ..
 )
+echo ====================== >>%newlog%
 
 
