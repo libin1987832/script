@@ -1,0 +1,1 @@
+C:\Users\Lenovo\AppData\Local\conda\conda\envs\tensorflow_cpu\python.exe H:/code/SplitServer/tencentIp.py
