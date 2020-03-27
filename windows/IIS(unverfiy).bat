@@ -1,7 +1,7 @@
 @echo off
-echo æ­£åœ¨æ·»åŠ IISåŠŸèƒ½ï¼Œè¿™å¯èƒ½éœ€è¦å‡ åˆ†é’Ÿæ—¶é—´...
+echo ÕıÔÚÌí¼ÓIIS¹¦ÄÜ£¬Õâ¿ÉÄÜĞèÒª¼¸·ÖÖÓÊ±¼ä...
 start /w pkgmgr /iu:IIS-WebServerRole;IIS-WebServer;IIS-CommonHttpFeatures;IIS-StaticContent;IIS-DefaultDocument;IIS-DirectoryBrowsing;IIS-HttpErrors;IIS-HttpRedirect;IIS-ApplicationDevelopment;IIS-ASPNET;IIS-NetFxExtensibility;IIS-ASP;IIS-ISAPIExtensions;IIS-ISAPIFilter;IIS-ServerSideIncludes;IIS-HealthAndDiagnostics;IIS-HttpLogging;IIS-LoggingLibraries;IIS-RequestMonitor;IIS-HttpTracing;IIS-CustomLogging;IIS-ODBCLogging;IIS-Security;IIS-BasicAuthentication;IIS-WindowsAuthentication;IIS-DigestAuthentication;IIS-ClientCertificateMappingAuthentication;IIS-IISCertificateMappingAuthentication;IIS-URLAuthorization;IIS-RequestFiltering;IIS-IPSecurity;IIS-Performance;IIS-WebServerManagementTools;IIS-ManagementConsole;IIS-ManagementScriptingTools;IIS-ManagementService;IIS-IIS6ManagementCompatibility;IIS-Metabase;IIS-WMICompatibility;IIS-LegacyScripts;IIS-LegacySnapIn;WAS-WindowsActivationService;WAS-ProcessModel;WAS-NetFxEnvironment;WAS-ConfigurationAPI
-echo IISå·²æ·»åŠ æˆåŠŸ!
+echo IISÒÑÌí¼Ó³É¹¦!
 pause
 
 
@@ -16,20 +16,20 @@ dism /online /enable-feature /featurename:IIS-IIS6ManagementCompatibility
 dism /online /enable-feature /featurename:IIS-Metabase
 
 
-cd /d C:\Inetpub\AdminScripts //è¿›å…¥è„šæœ¬ç›®å½•
-adsutil.vbs create_vserv Â w3svc/99 //æ–°å»ºç«™ç‚¹
-adsutil.vbs set Â w3svc/99/serversize 1 //ç«™ç‚¹çš„å¤§å°
-adsutil.vbs set Â w3svc/99/servercomment "TestETM" //ç«™ç‚¹çš„åˆ«å
-adsutil.vbs set Â w3svc/99/serverbindings ":26:" //ç«™ç‚¹çš„ç«¯å£
-adsutil.vbs set Â w3svc/99/enabledefaultdoc true //å¯ç”¨é»˜è®¤æ–‡æ¡£
-adsutil.vbs set Â w3svc/99/defaultdoc "login.aspx" //é»˜è®¤æ–‡æ¡£
-adsutil.vbs create_vdir Â w3svc/99/root //åˆ›å»ºæ ¹ç›®å½•
-adsutil.vbs set Â w3svc/99/root/path D:\TestETM\Web //ç½‘ç«™è·¯å¾„
-adsutil.vbs set Â w3svc/99/root/accessread true //è®¾ç½®ç½‘ç«™å±æ€§ï¼šå¯è¯»
-adsutil.vbs set Â w3svc/99/root/accessscript true //è®¾ç½®æ‰§è¡Œæƒé™ä¸ºï¼šçº¯è„šæœ¬
-adsutil.vbs appcreateinproc W3SVC/99/Root //åˆ›å»ºåº”ç”¨ç¨‹åº
-adsutil.vbs set Â w3svc/99/root/appfriendlyName é»˜è®¤åº”ç”¨ç¨‹åº
-adsutil.vbs CREATE W3SVC/AppPools/ETM_Pool "IIsApplicationPool" //åˆ›å»ºåº”ç”¨æ± 
-adsutil.vbs set Â w3svc/99/root/apppoolid ETM_Pool //æŒ‡å®šåº”ç”¨æ± 
-cd /d C:\WINDOWS\Microsoft.NET\Framework\v4.0.30128 //æŒ‡å®š.netç‰ˆæœ¬
-aspnet_regiis /norestart -s /w3svc/99
+cd /d C:\Inetpub\AdminScripts //½øÈë½Å±¾Ä¿Â¼
+adsutil.vbs create_vserv latex //ĞÂ½¨Õ¾µã
+adsutil.vbs set latex/serversize 1 //Õ¾µãµÄ´óĞ¡
+adsutil.vbs set latex/servercomment "latex" //Õ¾µãµÄ±ğÃû
+adsutil.vbs set latex/serverbindings ":27939:" //Õ¾µãµÄ¶Ë¿Ú
+adsutil.vbs set latex/enabledefaultdoc true //ÆôÓÃÄ¬ÈÏÎÄµµ
+adsutil.vbs set latex/defaultdoc " " //Ä¬ÈÏÎÄµµ
+rem adsutil.vbs create_vdir latex/ //´´½¨¸ùÄ¿Â¼
+adsutil.vbs set latex/path E:\git\pdf-storage //ÍøÕ¾Â·¾¶
+adsutil.vbs set latex/accessread true //ÉèÖÃÍøÕ¾ÊôĞÔ£º¿É¶Á
+adsutil.vbs set latex/accessscript true //ÉèÖÃÖ´ĞĞÈ¨ÏŞÎª£º´¿½Å±¾
+adsutil.vbs appcreateinproc latex/ //´´½¨Ó¦ÓÃ³ÌĞò
+rem adsutil.vbs set latex/ Ä¬ÈÏÓ¦ÓÃ³ÌĞò
+rem adsutil.vbs CREATE W3SVC/AppPools/ETM_Pool "IIsApplicationPool" //´´½¨Ó¦ÓÃ³Ø
+adsutil.vbs set latex/apppoolid ETM_Pool //Ö¸¶¨Ó¦ÓÃ³Ø
+cd /d C:\WINDOWS\Microsoft.NET\Framework\v4.0.30128 //Ö¸¶¨.net°æ±¾
+aspnet_regiis /norestart -s /latex
