@@ -12,7 +12,7 @@ schtasks /create /sc hourly /tn "hexo generated" /tr %hexofile%
 
 schtasks /create /sc hourly /tn "hexo deploy" /tr %hexod%
 
-schtasks /create /sc hourly /tn "paper auto content" /tr %autopaper%
+rem schtasks /create /sc hourly /tn "paper auto content" /tr %autopaper%
 
 
 rem how to hide cmd console
