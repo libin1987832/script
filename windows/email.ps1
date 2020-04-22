@@ -1,7 +1,7 @@
 chcp 65001
 $ScheduledTaskName = "git rs"
-schtasks /query /FO LIST /V /TN $ScheduledTaskName  
-$Result = (schtasks /query /FO LIST /V /TN $ScheduledTaskName  | findstr "Last Result")
+#schtasks /query /FO LIST /V /TN $ScheduledTaskName  
+$Result = (schtasks /query /FO LIST /V /TN $ScheduledTaskName  | findstr "Result")
 #echo findstr "Last Result"
 $Result = $Result.substring(12)
 $Code = $Result.trim()

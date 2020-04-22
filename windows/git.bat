@@ -24,4 +24,6 @@ cd ..
 )
 echo ====================== >>%newlog%
 
+PowerShell.exe -file %dir%email.ps1
+
 
