@@ -14,8 +14,8 @@ echo $Code
 
 $From = "Alert Scheduled Task <15873465158@139.com>"
 $To = "Me Gmail <15873465158@139.com>"
-$Subject = "Scheduled task 'git' failed[qb]"
-$Body = "Error code: $Code"
+$Subject = "Scheduled task 'git' failed[home error:$Code]"
+$Body = (Get-Content C:\Users\lb\Desktop\cmd\git.log)[0..50]
 $SMTPServer = "smtp.139.com"
 $SMTPPort = "25"
 
