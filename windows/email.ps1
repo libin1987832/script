@@ -11,11 +11,12 @@ echo $Code
     $Pass = ConvertTo-SecureString -String "Libin198783" -AsPlainText -Force
     $Cred = New-Object System.Management.Automation.PSCredential $User, $Pass
 ################################################################################
+$CurrentyDir = (Split-Path -Parent $MyInvocation.MyCommand.Definition);
 
 $From = "Alert Scheduled Task <15873465158@139.com>"
 $To = "Me Gmail <15873465158@139.com>"
-$Subject = "Scheduled task 'git' failed[home error:$Code]"
-$Body = (Get-Content C:\Users\lb\Desktop\cmd\git.log -Tail 100) | Out-String
+$Subject = "qb[Error code:$Code]"
+$Body = (Get-Content $CurrentyDir\git.log -Tail 100) | Out-String
 $SMTPServer = "smtp.139.com"
 $SMTPPort = "25"
 
