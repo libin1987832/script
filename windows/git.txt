@@ -1,0 +1,5 @@
+latex tex 3 bib eps
+hexo_genkins md
+pdf-storage txt
+script bat 2 ps1
+optim m
