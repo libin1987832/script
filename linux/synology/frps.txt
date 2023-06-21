@@ -1,0 +1,53 @@
+[common]
+server_addr = 43.136.110.212
+server_port = 7000
+authentication_method = token
+token = Libin198783@
+
+[ssh]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 22
+remote_port = 6000
+
+[qh]
+type = http
+local_ip = 127.0.0.1
+local_port = 5000
+remote_port = 8182
+custom_domains = qh.muzi.wiki
+
+[vault]
+type = http
+local_ip = 127.0.0.1
+local_port = 8507
+remote_port = 8182
+custom_domains = vault.muzi.wiki
+
+[webdav]
+type = http
+local_ip = 127.0.0.1
+local_port = 5005
+remote_port = 8182
+custom_domains = webdav.muzi.wiki
+
+[nastools]
+type = http
+local_ip = 127.0.0.1
+local_port = 3003
+remote_port = 8182
+custom_domains = nastools.muzi.wiki
+
+[chrome]
+type = http
+local_ip = 127.0.0.1
+local_port = 8818
+remote_port = 8182
+custom_domains = chrome.muzi.wiki
+
+[jackett]
+type = http
+local_ip = 127.0.0.1
+local_port = 9696
+remote_port = 8182
+custom_domains = jackett.muzi.wiki
